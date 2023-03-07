@@ -1,0 +1,17 @@
+eclipse.preferences.version=1
+repositories/file\:_Users_tester_jenkins_workspace_zulu-jmc8_jmc_target/description=
+repositories/file\:_Users_tester_jenkins_workspace_zulu-jmc8_jmc_target/enabled=true
+repositories/file\:_Users_tester_jenkins_workspace_zulu-jmc8_jmc_target/isSystem=false
+repositories/file\:_Users_tester_jenkins_workspace_zulu-jmc8_jmc_target/name=module-metadata-repository@/Users/tester/jenkins/workspace/zulu-jmc8/jmc/target
+repositories/file\:_Users_tester_jenkins_workspace_zulu-jmc8_jmc_target/provider=
+repositories/file\:_Users_tester_jenkins_workspace_zulu-jmc8_jmc_target/suffix=p2content.xml
+repositories/file\:_Users_tester_jenkins_workspace_zulu-jmc8_jmc_target/type=org.eclipse.tycho.repository.module.ModuleMetadataRepository
+repositories/file\:_Users_tester_jenkins_workspace_zulu-jmc8_jmc_target/uri=file\:/Users/tester/jenkins/workspace/zulu-jmc8/jmc/target/
+repositories/file\:_Users_tester_jenkins_workspace_zulu-jmc8_jmc_target/version=1.0.0
+repositories/file\:_Users_tester_jenkins_workspace_zulu-jmc8_jmc_target_targetPlatformRepository/enabled=true
+repositories/file\:_Users_tester_jenkins_workspace_zulu-jmc8_jmc_target_targetPlatformRepository/isSystem=false
+repositories/file\:_Users_tester_jenkins_workspace_zulu-jmc8_jmc_target_targetPlatformRepository/name=TychoTargetPlatform
+repositories/file\:_Users_tester_jenkins_workspace_zulu-jmc8_jmc_target_targetPlatformRepository/suffix=content.xml
+repositories/file\:_Users_tester_jenkins_workspace_zulu-jmc8_jmc_target_targetPlatformRepository/type=org.eclipse.equinox.internal.p2.metadata.repository.LocalMetadataRepository
+repositories/file\:_Users_tester_jenkins_workspace_zulu-jmc8_jmc_target_targetPlatformRepository/uri=file\:/Users/tester/jenkins/workspace/zulu-jmc8/jmc/target/targetPlatformRepository/
+repositories/file\:_Users_tester_jenkins_workspace_zulu-jmc8_jmc_target_targetPlatformRepository/version=0.0.1

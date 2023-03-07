@@ -1,0 +1,10 @@
+commit 2a8c201c0ebba5ae71ce4e8d3a7f8ccb9069db06
+tree 29a76085add62cfb015e77e56802e6bb3be7cdb7
+parent dc263e54ed9f0d7bc405a60671381ea3c0f9a29c
+author msweelam <msweelam@unifonic.com> 2023-02-28 23:32:41 +0400
+committer msweelam <msweelam@unifonic.com> 2023-02-28 23:32:41 +0400
+
+    disable opentracing
+
+
+:000000 100644 0000000000000000000000000000000000000000 82d926d33ee78f0b972cbaa24508515e2a1eb396 A	customer-service/src/test/java/com/customers/config/TracingConfig.java

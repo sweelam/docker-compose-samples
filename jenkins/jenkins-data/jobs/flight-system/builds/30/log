@@ -1,0 +1,144 @@
+Started by user [8mha:////4G+DXSiVimt9tvdZJ/hgPSIeiaZzSm0HFyfEQPx1+55SAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyOEgZu/dLi1CL9xJTczDwAg9OS0cAAAAA=[0mmsweelam
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/flight-system
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/flight-system/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/sweelam/flight-system # timeout=10
+Fetching upstream changes from https://github.com/sweelam/flight-system
+ > git --version # timeout=10
+ > git --version # 'git version 2.30.2'
+ > git fetch --tags --force --progress -- https://github.com/sweelam/flight-system +refs/heads/*:refs/remotes/origin/* # timeout=10
+Seen branch in repository origin/main
+Seen 1 remote branch
+ > git show-ref --tags -d # timeout=10
+Checking out Revision 2a8c201c0ebba5ae71ce4e8d3a7f8ccb9069db06 (origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 2a8c201c0ebba5ae71ce4e8d3a7f8ccb9069db06 # timeout=10
+Commit message: "disable opentracing"
+ > git rev-list --no-walk dc263e54ed9f0d7bc405a60671381ea3c0f9a29c # timeout=10
+[flight-system] $ /var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/mvn-3.9.0/bin/mvn -f customer-service/pom.xml clean test
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< com.customers:customer-service >-------------------
+[INFO] Building customer-service 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ customer-service ---
+[INFO] Deleting /var/jenkins_home/workspace/flight-system/customer-service/target
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ customer-service ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ customer-service ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 5 source files to /var/jenkins_home/workspace/flight-system/customer-service/target/classes
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ customer-service ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ customer-service ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 3 source files to /var/jenkins_home/workspace/flight-system/customer-service/target/test-classes
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ customer-service ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.customers.CustomerServiceApplicationTests
+19:33:11.452 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+19:33:11.478 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+19:33:11.544 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.customers.CustomerServiceApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+19:33:11.570 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.customers.CustomerServiceApplicationTests], using SpringBootContextLoader
+19:33:11.578 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.customers.CustomerServiceApplicationTests]: class path resource [com/customers/CustomerServiceApplicationTests-context.xml] does not exist
+19:33:11.580 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.customers.CustomerServiceApplicationTests]: class path resource [com/customers/CustomerServiceApplicationTestsContext.groovy] does not exist
+19:33:11.580 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.customers.CustomerServiceApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+19:33:11.581 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.customers.CustomerServiceApplicationTests]: CustomerServiceApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+19:33:11.672 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.customers.CustomerServiceApplicationTests]
+19:33:11.784 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/var/jenkins_home/workspace/flight-system/customer-service/target/classes/com/customers/CustomerServiceApplication.class]
+19:33:11.786 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.customers.CustomerServiceApplication for test class com.customers.CustomerServiceApplicationTests
+19:33:12.040 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.customers.CustomerServiceApplicationTests]: using defaults.
+19:33:12.047 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+19:33:12.089 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@68b6f0d6, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@4044fb95, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@aa549e5, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@36f48b4, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@5c00384f, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3b7ff809, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1bb564e2, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@62e6b5c8, org.springframework.test.context.event.EventPublishingTestExecutionListener@3f792b9b, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@7b8233cd, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@4b20ca2b, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@1cbf6e72, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6aecbb8d, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@1af146, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@4da602fc]
+19:33:12.105 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@6cfcd46d testClass = CustomerServiceApplicationTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@52045dbe testClass = CustomerServiceApplicationTests, locations = '{}', classes = '{class com.customers.CustomerServiceApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@55cf0d14, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@1fd14d74, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@662706a7, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@2474f125, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6ee4d9ab, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@7a69b07], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.8)
+
+2023-02-28 19:33:12.787  INFO 414 --- [           main] c.c.CustomerServiceApplicationTests      : Starting CustomerServiceApplicationTests using Java 17.0.6 on da76948a1192 with PID 414 (started by root in /var/jenkins_home/workspace/flight-system/customer-service)
+2023-02-28 19:33:12.788  INFO 414 --- [           main] c.c.CustomerServiceApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2023-02-28 19:33:16.392  INFO 414 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'io.opentracing.contrib.spring.cloud.async.DefaultAsyncAutoConfiguration' of type [io.opentracing.contrib.spring.cloud.async.DefaultAsyncAutoConfiguration$$EnhancerBySpringCGLIB$$209a4e99] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-02-28 19:33:16.861  INFO 414 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'io.opentracing.contrib.spring.cloud.kafka.KafkaAutoConfiguration' of type [io.opentracing.contrib.spring.cloud.kafka.KafkaAutoConfiguration$$EnhancerBySpringCGLIB$$963f9716] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-02-28 19:33:16.882  INFO 414 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'io.opentracing.contrib.java.spring.jaeger.starter.JaegerAutoConfiguration' of type [io.opentracing.contrib.java.spring.jaeger.starter.JaegerAutoConfiguration$$EnhancerBySpringCGLIB$$31615c88] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-02-28 19:33:16.942  INFO 414 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'opentracing.jaeger-io.opentracing.contrib.java.spring.jaeger.starter.JaegerConfigurationProperties' of type [io.opentracing.contrib.java.spring.jaeger.starter.JaegerConfigurationProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-02-28 19:33:16.963  INFO 414 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'metricsFactory' of type [io.jaegertracing.internal.metrics.NoopMetricsFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-02-28 19:33:16.977  INFO 414 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'metrics' of type [io.jaegertracing.internal.metrics.Metrics] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-02-28 19:33:16.986  INFO 414 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'sampler' of type [io.jaegertracing.internal.samplers.ConstSampler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-02-28 19:33:17.321  INFO 414 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'reporter' of type [io.jaegertracing.internal.reporters.CompositeReporter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-02-28 19:33:17.365  INFO 414 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'tracer' of type [io.jaegertracing.internal.JaegerTracer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-02-28 19:33:18.488  INFO 414 --- [           main] o.c.s.w.s.ServerTracingAutoConfiguration : Creating WebMvcConfigurer bean with class io.opentracing.contrib.spring.web.interceptor.TracingHandlerInterceptor
+2023-02-28 19:33:21.003  INFO 414 --- [           main] o.c.s.w.s.ServerTracingAutoConfiguration : Creating FilterRegistrationBean bean with TracingFilter mapped to [], skip pattern is "/api-docs.*|/swagger.*|.*\.png|.*\.css|.*\.js|.*\.html|/favicon.ico|/hystrix.stream|/actuator/(health|health/.*)"
+2023-02-28 19:33:21.986  INFO 414 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-02-28 19:33:22.111  INFO 414 --- [           main] c.c.CustomerServiceApplicationTests      : Started CustomerServiceApplicationTests in 9.907 seconds (JVM running for 11.706)
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.777 s - in com.customers.CustomerServiceApplicationTests
+[INFO] Running com.customers.api.CustomerControllerTest
+2023-02-28 19:33:23.091  INFO 414 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.customers.api.CustomerControllerTest], using SpringBootContextLoader
+2023-02-28 19:33:23.096  INFO 414 --- [           main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.customers.api.CustomerControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2023-02-28 19:33:23.096  INFO 414 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.customers.api.CustomerControllerTest]: CustomerControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-02-28 19:33:23.123  INFO 414 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.customers.CustomerServiceApplication for test class com.customers.api.CustomerControllerTest
+2023-02-28 19:33:23.125  INFO 414 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2023-02-28 19:33:23.126  INFO 414 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@d1d85d0, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@115a7e51, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@23ea3853, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6f1163f7, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@e4348c0, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4ca907af, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3ef396c9, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@5a99543b, org.springframework.test.context.event.EventPublishingTestExecutionListener@4e0802e0, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@4a18e0f1, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@687f62a5, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@7857cb1d, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@7646c9f5, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@7b54a0a4, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@682d9f21]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.8)
+
+2023-02-28 19:33:23.245  INFO 414 --- [           main] c.customers.api.CustomerControllerTest   : Starting CustomerControllerTest using Java 17.0.6 on da76948a1192 with PID 414 (started by root in /var/jenkins_home/workspace/flight-system/customer-service)
+2023-02-28 19:33:23.245  INFO 414 --- [           main] c.customers.api.CustomerControllerTest   : The following 1 profile is active: "test"
+2023-02-28 19:33:24.004  INFO 414 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'io.opentracing.contrib.spring.cloud.async.DefaultAsyncAutoConfiguration' of type [io.opentracing.contrib.spring.cloud.async.DefaultAsyncAutoConfiguration$$EnhancerBySpringCGLIB$$209a4e99] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-02-28 19:33:24.067  INFO 414 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'io.opentracing.contrib.spring.cloud.kafka.KafkaAutoConfiguration' of type [io.opentracing.contrib.spring.cloud.kafka.KafkaAutoConfiguration$$EnhancerBySpringCGLIB$$963f9716] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-02-28 19:33:24.114  INFO 414 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'tracingConfig' of type [com.customers.config.TracingConfig$$EnhancerBySpringCGLIB$$fa24db44] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-02-28 19:33:24.165  INFO 414 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'jaegerTracer' of type [io.opentracing.noop.NoopTracerImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-02-28 19:33:24.647  INFO 414 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2023-02-28 19:33:24.673  INFO 414 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-28 19:33:24.674  INFO 414 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-02-28 19:33:24.886  INFO 414 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-28 19:33:24.887  INFO 414 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1636 ms
+2023-02-28 19:33:25.289  INFO 414 --- [           main] o.c.s.w.s.ServerTracingAutoConfiguration : Creating FilterRegistrationBean bean with TracingFilter mapped to [], skip pattern is "/api-docs.*|/swagger.*|.*\.png|.*\.css|.*\.js|.*\.html|/favicon.ico|/hystrix.stream|/actuator/(health|health/.*)"
+2023-02-28 19:33:25.914  INFO 414 --- [           main] o.c.s.w.s.ServerTracingAutoConfiguration : Creating WebMvcConfigurer bean with class io.opentracing.contrib.spring.web.interceptor.TracingHandlerInterceptor
+2023-02-28 19:33:27.347  INFO 414 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring TestDispatcherServlet ''
+2023-02-28 19:33:27.351  INFO 414 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-02-28 19:33:27.360  INFO 414 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-02-28 19:33:27.429  INFO 414 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 77 ms
+2023-02-28 19:33:27.680  INFO 414 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 39927 (http) with context path ''
+2023-02-28 19:33:27.686  INFO 414 --- [           main] c.customers.api.CustomerControllerTest   : Started CustomerControllerTest in 4.557 seconds (JVM running for 17.281)
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.837 s - in com.customers.api.CustomerControllerTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  21.718 s
+[INFO] Finished at: 2023-02-28T19:33:28Z
+[INFO] ------------------------------------------------------------------------
+Finished: SUCCESS

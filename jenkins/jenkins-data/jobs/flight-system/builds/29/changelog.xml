@@ -1,0 +1,21 @@
+commit dc263e54ed9f0d7bc405a60671381ea3c0f9a29c
+tree 762e5152be03361d8d4d248e9f8dbe9362c025cf
+parent 61d7fcdbe03c0a827a63b1f8de5a5e56bd0b6db8
+author msweelam <msweelam@unifonic.com> 2023-02-28 23:19:32 +0400
+committer msweelam <msweelam@unifonic.com> 2023-02-28 23:19:32 +0400
+
+    Dummy commit
+
+
+:100644 100644 be4f2b826dc059b8bc7e2dc2e72532c9b9a2f1ca 80d3b746158aec5e86bc6c8b2ef2e330ff3a5361 M	customer-service/src/main/resources/application.properties
+commit 61d7fcdbe03c0a827a63b1f8de5a5e56bd0b6db8
+tree b697fd9d3218d35fbde10bd28e7479271ada2431
+parent ed335d7236793123fbda58c869da5afc5617b6dd
+author msweelam <msweelam@unifonic.com> 2023-02-28 23:08:57 +0400
+committer msweelam <msweelam@unifonic.com> 2023-02-28 23:08:57 +0400
+
+    disable jaeegar in testing
+
+
+:100644 100644 3e6b491e478b2c4b305d48a3573af147edde9e7a 1bd98256912dd9bd6f96b69ba6fbe91c199914b2 M	customer-service/src/test/java/com/customers/api/CustomerControllerTest.java
+:000000 100644 0000000000000000000000000000000000000000 c9a8931d73f4eadca4975daab486d80a60192d23 A	customer-service/src/test/resources/application-test.properties

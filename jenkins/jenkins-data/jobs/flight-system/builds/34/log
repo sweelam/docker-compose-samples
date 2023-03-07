@@ -1,0 +1,38 @@
+Started by user [8mha:////4G+DXSiVimt9tvdZJ/hgPSIeiaZzSm0HFyfEQPx1+55SAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyOEgZu/dLi1CL9xJTczDwAg9OS0cAAAAA=[0mmsweelam
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/flight-system
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/flight-system/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/sweelam/flight-system # timeout=10
+Fetching upstream changes from https://github.com/sweelam/flight-system
+ > git --version # timeout=10
+ > git --version # 'git version 2.30.2'
+ > git fetch --tags --force --progress -- https://github.com/sweelam/flight-system +refs/heads/*:refs/remotes/origin/* # timeout=10
+Seen branch in repository origin/main
+Seen 1 remote branch
+ > git show-ref --tags -d # timeout=10
+Checking out Revision 2a8c201c0ebba5ae71ce4e8d3a7f8ccb9069db06 (origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 2a8c201c0ebba5ae71ce4e8d3a7f8ccb9069db06 # timeout=10
+Commit message: "disable opentracing"
+ > git rev-list --no-walk 2a8c201c0ebba5ae71ce4e8d3a7f8ccb9069db06 # timeout=10
+[flight-system] $ /var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/mvn-3.9.0/bin/mvn -f **/pom.xml clean install
+POM file **/pom.xml specified with the -f/--file command line argument does not exist
+[INFO] Scanning for projects...
+[8mha:////4EVFq4wmwINNwTcowiYYuAm1vcUy9/QCSkxHbBJlPAMEAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55Zek1m9pfpLfVWLNxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAABqVhoSYAAAAA==[0m[ERROR] [ERROR] Some problems were encountered while processing the POMs:
+[FATAL] Non-readable POM /var/jenkins_home/workspace/flight-system/**/pom.xml: /var/jenkins_home/workspace/flight-system/**/pom.xml (No such file or directory) @ 
+ @ 
+[8mha:////4EVFq4wmwINNwTcowiYYuAm1vcUy9/QCSkxHbBJlPAMEAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55Zek1m9pfpLfVWLNxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAABqVhoSYAAAAA==[0m[ERROR] The build could not read 1 project -> [Help 1]
+[8mha:////4EVFq4wmwINNwTcowiYYuAm1vcUy9/QCSkxHbBJlPAMEAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55Zek1m9pfpLfVWLNxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAABqVhoSYAAAAA==[0m[ERROR]   
+[8mha:////4EVFq4wmwINNwTcowiYYuAm1vcUy9/QCSkxHbBJlPAMEAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55Zek1m9pfpLfVWLNxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAABqVhoSYAAAAA==[0m[ERROR]   The project  (/var/jenkins_home/workspace/flight-system/**/pom.xml) has 1 error
+[8mha:////4EVFq4wmwINNwTcowiYYuAm1vcUy9/QCSkxHbBJlPAMEAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55Zek1m9pfpLfVWLNxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAABqVhoSYAAAAA==[0m[ERROR]     Non-readable POM /var/jenkins_home/workspace/flight-system/**/pom.xml: /var/jenkins_home/workspace/flight-system/**/pom.xml (No such file or directory)
+[8mha:////4EVFq4wmwINNwTcowiYYuAm1vcUy9/QCSkxHbBJlPAMEAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55Zek1m9pfpLfVWLNxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAABqVhoSYAAAAA==[0m[ERROR] 
+[8mha:////4EVFq4wmwINNwTcowiYYuAm1vcUy9/QCSkxHbBJlPAMEAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55Zek1m9pfpLfVWLNxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAABqVhoSYAAAAA==[0m[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[8mha:////4EVFq4wmwINNwTcowiYYuAm1vcUy9/QCSkxHbBJlPAMEAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55Zek1m9pfpLfVWLNxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAABqVhoSYAAAAA==[0m[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[8mha:////4EVFq4wmwINNwTcowiYYuAm1vcUy9/QCSkxHbBJlPAMEAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55Zek1m9pfpLfVWLNxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAABqVhoSYAAAAA==[0m[ERROR] 
+[8mha:////4EVFq4wmwINNwTcowiYYuAm1vcUy9/QCSkxHbBJlPAMEAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55Zek1m9pfpLfVWLNxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAABqVhoSYAAAAA==[0m[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[8mha:////4EVFq4wmwINNwTcowiYYuAm1vcUy9/QCSkxHbBJlPAMEAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55Zek1m9pfpLfVWLNxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAABqVhoSYAAAAA==[0m[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/ProjectBuildingException
+Build step 'Invoke top-level Maven targets' marked build as failure
+Finished: FAILURE

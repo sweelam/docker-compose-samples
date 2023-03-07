@@ -1,0 +1,138 @@
+version: "3.5"
+
+services:
+
+  mysql:
+    platform: linux/x86_64
+    image: mysql:5.7.38
+    restart: always
+    networks:
+      default:
+        ipv4_address: 172.19.19.102
+    ports:
+      - "${MYSQL_PORT}:${MYSQL_PORT}"
+    environment:
+      MYSQL_ROOT_PASSWORD: "${MYSQL_PASSWORD}"
+    volumes:
+      - "./docker/mysql/dumps:/docker-entrypoint-initdb.d"
+
+  cassandra:
+    image: bitnami/cassandra:3.11-debian-11
+    restart: always
+    networks:
+      default:
+        ipv4_address: 172.19.19.103
+    ports:
+      - "${CASSANDRA_PORT}:${CASSANDRA_PORT}"
+    volumes:
+      - ./docker/cassandra/dumps:/docker-entrypoint-initdb.d
+
+  rabbitmq:
+    image: rabbitmq:3.10.5-management
+    networks:
+      default:
+        ipv4_address: 172.19.19.104
+    ports:
+      - "${RABBITMQ_PORT}:${RABBITMQ_PORT}"
+      - 15672:15672
+
+  memcached:
+    image: memcached:1
+    networks:
+      default:
+        ipv4_address: 172.19.19.105
+    ports:
+      - "${MEMCACHED_PORT}:${MEMCACHED_PORT}"
+
+  zipkin:
+    image: openzipkin/zipkin:2
+    networks:
+      default:
+        ipv4_address: 172.19.19.106
+    ports:
+      - "${ZIPKIN_PORT}:${ZIPKIN_PORT}"
+
+  # https://github.com/scholzj/strimzi-compose-up
+  zookeeper:
+    image: quay.io/strimzi/kafka:0.31.1-kafka-3.2.0
+    command: [
+      "sh", "-c",
+      "bin/zookeeper-server-start.sh config/zookeeper.properties"
+    ]
+    ports:
+      - "2181:2181"
+    environment:
+      LOG_DIR: /tmp/logs
+
+  kafka:
+    image: quay.io/strimzi/kafka:0.31.1-kafka-3.2.0
+    command: [
+      "sh", "-c",
+      "bin/kafka-server-start.sh config/server.properties --override listeners=$${KAFKA_LISTENERS} --override advertised.listeners=$${KAFKA_ADVERTISED_LISTENERS} --override zookeeper.connect=$${KAFKA_ZOOKEEPER_CONNECT}"
+    ]
+    networks:
+      default:
+        ipv4_address: 172.19.19.109
+    ports:
+      - '9092:9092'
+    environment:
+      LOG_DIR: "/tmp/logs"
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://172.19.19.109:9092
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+
+  kafdrop:
+    image: obsidiandynamics/kafdrop:latest
+    depends_on:
+      - kafka
+    ports:
+      - "9000:9000"
+    environment:
+      SERVER_SERVLET_CONTEXTPATH: /
+      KAFKA_BROKERCONNECT: 172.19.19.109:9092
+      JVM_OPTS: "-Xms128M -Xmx512M"
+
+  init-kafka:
+    image: quay.io/strimzi/kafka:0.31.1-kafka-3.2.0
+    depends_on:
+      - kafka
+    entrypoint: [ '/bin/sh', '-c' ]
+    command: |
+      '
+      # blocks until kafka is reachable
+      bin/kafka-topics.sh --bootstrap-server kafka:9092 --list
+      
+      bin/kafka-topics.sh --bootstrap-server kafka:9092 --create --if-not-exists --topic dev.sms.failedCharging               --replication-factor 1 --partitions 2
+      bin/kafka-topics.sh --bootstrap-server kafka:9092 --create --if-not-exists --topic dev.fraud.detection.consulting.event --replication-factor 1 --partitions 2
+      bin/kafka-topics.sh --bootstrap-server kafka:9092 --create --if-not-exists --topic dev.fraud.detection.report.event     --replication-factor 1 --partitions 2
+      bin/kafka-topics.sh --bootstrap-server kafka:9092 --create --if-not-exists --topic dev.sms.ecdr.el                      --replication-factor 1 --partitions 2
+      bin/kafka-topics.sh --bootstrap-server kafka:9092 --create --if-not-exists --topic dev.sms.cm.events                    --replication-factor 1 --partitions 2
+      echo -e 'Created kafka topics:'
+      bin/kafka-topics.sh --bootstrap-server kafka:9092 --list
+      '
+
+  smsc-gateway:
+    image: mockserver/mockserver:5.14.0
+    environment:
+      MOCKSERVER_LOG_LEVEL: INFO
+      MOCKSERVER_SERVER_PORT: 5001
+      MOCKSERVER_WATCH_INITIALIZATION_JSON: "true"
+      MOCKSERVER_INITIALIZATION_JSON_PATH: /init/mockserverInitialization.json
+    ports:
+      - "5001:5001"
+    networks:
+      default:
+        ipv4_address: 172.19.19.110
+    volumes:
+      - "./docker:/init"
+
+networks:
+  default:
+    external: true
+    name: app-network
+        
+    
+
+  
+
+  
